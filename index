@@ -1,0 +1,374 @@
+<link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<html>
+<head>
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body{
+  margin:0 auto;
+  font-family: 'Rubik', sans-serif;
+}
+.webpage{
+  min-width:520px;
+  background-color:#f5f5f5;
+}
+.nav-bar{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+  height:60px;
+  background:white;
+  position:relative;
+  z-index:1;
+}
+label{
+  border-right:1px solid #ddd;
+  color:#7b7b87;
+  font-weight:400;
+  align-items: center;
+  display: inline-flex;
+  padding:20px;
+}
+a{
+  text-decoration:none;
+  color:white;
+}
+.slide{
+  width:200px;
+  align-items:right;
+  display: inline-flex;
+  padding:20px  0  0 40px ;
+}
+@media screen and (max-width:700px){
+  .image-wrapper{
+    width:100% !important;
+    height:40% !important;
+  }
+  .about-me-content{
+    flex-direction:column;
+  }
+}
+.right{
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+.about-page{
+  display:flex;
+
+  background-color:#fff;
+}
+.left-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display: inline-block;
+}
+.about-me-content{
+  display:flex;
+}
+.about-right{
+  backround-color:white;
+  padding:50px;
+  flex: 1;
+}
+.image-wrapper{
+  width:40%;
+  height:100%;
+}
+.about-header{
+  color:#FC9F20;
+  font-weight:400;
+  font-size:30px;
+}
+.about-subheader{
+  border-bottom:1px solid #D5D5D5;
+  font-weight:200;
+  font-size:16px;
+  color:#A9A9A9;
+}
+.index-page{
+  height: calc(100vh - 60px);
+  overflow:hidden;
+}
+.skill-progress{
+  border:1px solid #ddd;
+  padding:6px;
+  border-radius:10px;
+}
+.progress-width{
+  padding:4px;
+  border-radius:10px;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+.progress-width.full{
+  width:100%;
+}
+.progress-width.threequarter{
+  width:75%;
+}
+.progress-width.half{
+  width:50%;
+}
+.progress-width.quarter{
+  width:25%;
+}
+.image{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.boxes{
+  flex-shrink:0;
+  position:relative;
+  margin-right:40px;
+  width:30%;
+  height:60%;
+  transition: .3s ease-in-out;
+  text-align:center;
+}
+.boxes:hover{
+  opacity: .5;
+  width:40%;
+  height:70%;
+}
+.box-1{
+  margin-left:40px;
+}
+.page-wrapper{
+  height:100%;
+  transition:.3s;
+}
+.interest-page{
+  overflow: auto;
+}
+.content{
+  position:absolute;
+  top:50%;
+ /* padding:0 30px;*/
+  font-size:14px;
+  width: 100%;
+  text-align: center;
+  transform:translateY(-50%);
+}
+.page{
+  display:flex;
+  height:100%;
+  overflow:auto;
+}
+input{
+  display:none;
+}
+.image-contact{
+  border-radius:50%;
+  width:100px;
+  height:100px;
+  object-fit:cover;
+}
+.account{
+  width:50px;
+  margin-right:20px;
+}
+.account:hover{
+  opacity: .5;
+}
+.accounts{
+  display:flex;
+}
+.linkedin{
+  border-radius:50%;
+}
+.contact-wrapper{
+  padding:50px;
+}
+.text{
+  color:#B2B2B2;
+  font-weight:300;
+  font-size:16px
+}
+.header-name{
+  color:#FFD518;
+  font-weight:500;
+}
+.contact-page{
+  background:#fff;
+  display:flex;
+  justify-content:space-around;
+}
+.service-icon{
+  width:80px;
+}
+.services-wrapper{
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  margin: auto;
+}
+.services-page{
+  width:100%;
+  padding:20px;
+}
+.service-header{
+  font-weight:500;
+  font-size:20px;
+}
+.service{
+  width: 20%;
+  text-align: center;
+}
+.interests-page , .contact-page{
+  align-items:center;
+}
+#projects-page:checked ~ .index-page .page-wrapper{
+  transform:translateY(-200%);
+}
+#contact-page:checked ~ .index-page .page-wrapper{
+  transform:translateY(-300%);
+}
+#about-page:checked ~ .nav-bar label[for="about-page"] , #interests-page:checked ~ .nav-bar label[for="interests-page"],#projects-page:checked ~ .nav-bar label[for="projects-page"] ,#contact-page:checked ~ .nav-bar label[for="contact-page"] {
+  box-shadow: 0 -2px 0px 0 #FC6320 inset;
+}
+@media screen and (max-width: 820px){
+  .nav-bar {
+    justify-content: flex-end;
+}
+  .right{
+    display:none;
+  }
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="webpage">
+  <input name="nav" type="radio" id="about-page" checked>
+  <input name="nav" type="radio" id="projects-page">
+  <input name="nav" type="radio" id="contact-page">
+  <nav class="nav-bar">
+    <div class="left">
+      <div class="sections">
+        <label for="about-page" checked>ABOUT ME</label>
+        <label for="projects-page">PROJECTS</label>
+        <label for="contact-page">CONTACT ME</label>
+      </div>
+    </div>
+    <div class="right">
+      <div class="slide">
+        <a href="./resume.pdf">DOWNLOAD CV</a>
+      </div>
+    </div>
+  </nav>
+  <div class="index-page">
+    <div class="page-wrapper">
+      <div class="page about-page" id="about">
+        <div class="about-me-content">
+          <div class="image-wrapper">
+          <img class="left-image" src="./photo.jpg">
+          </div>
+          <div class="about-right">
+            <h2 class="about-header">Matt Reid</h2>
+            <h3 class="about-subheader">
+              Data Analyst
+            </h3>
+             <p> I have a Bachelor of Science with a major in Mathematics from the University of British Columbia. My education was general, and covered topics including Probability, Statistics, Computer Science, and more esoteric Mathematics (Analysis, Abstract Algebra). I am extremely proficient with Excel (over a decade of experience), SQL and Python and since graduating, I’ve been familiarizing myself with even more technical skills such as Tableau and PowerBI. I consider myself a general quantitative problem solver: I enjoy diving into new areas and leveraging my skills to develop insights and solutions. I’ve also tutored Mathematics for years, across various levels. This has given me invaluable experience with communicating technical ideas in an engaging and understandable manner. I think this is especially useful in being a Data Analyst, where oftentimes the overarching goal is to produce technical insights for nontechnical parties.</p>
+            <div class="skills">
+              <div class="skill-name">Python</div>
+              <div class="skill-progress">
+                <div class="progress-width full"></div>
+              </div>
+            </div>
+             <div class="skills">
+              <div class="skill-name">Excel</div>
+              <div class="skill-progress">
+                <div class="progress-width full"></div>
+              </div>
+            </div>
+            <div class="skills">
+              <div class="skill-name">Java</div>
+              <div class="skill-progress">
+                <div class="progress-width full"></div>
+              </div>
+            </div>            
+            <div class="skills">
+              <div class="skill-name">SQL</div>
+              <div class="skill-progress">
+                <div class="progress-width threequarter"></div>
+              </div>
+            </div>
+            <div class="skills">
+              <div class="skill-name">Tableau</div>
+              <div class="skill-progress">
+                <div class="progress-width half"></div>
+              </div>
+            </div>            
+            <div class="skills">
+              <div class="skill-name">Power BI</div>
+              <div class="skill-progress">
+                <div class="progress-width half"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page interests-page" id="interests">
+    
+      </div>
+      <div class="page projects-page" id="services">
+        <div class="services-wrapper">
+          <div class="service">
+            <img class="service-icon" src="./sales.png
+">
+            <h2 class="service-header">Sales Forecasting</h2>
+            <p>   Given historical sales and customer data, I performed exploratory data analysis and implemented an ARIMA model in Python. This allowed me to forecast future sales and identify factors affecting sales.</p>
+          </div>
+          <div class="service">
+            <img class="service-icon" src="./cruise.png
+
+">
+            <h2 class="service-header">Titanic Survival</h2>
+            <p> Given a subset of passenger data from the Titanic shipwreck, I used Logistic Regression Analysis to predict which of the remaining passengers survived. All work was completed in Python, in a Jupyter notebook</p>
+          </div>
+          <div class="service">
+            <img class="service-icon" src="./easter-bunny.png
+">
+            <h2 class="service-header">Predator-Prey Simulation</h2>
+            <p>Using Java, I simulated a 2 species ecosystem (Lynx and Hares) on an individual level. The simulated data was then analyzed in Excel, which showed the expected coupled population curves. </p>
+          </div>
+          <div class="service">
+            <img class="service-icon" src="./shop.png">
+            <h2 class="service-header">Retail Store Analysis</h2>
+            <p> Given a large, unordered  retail store dataset, I created various statistical insights related to profitability of different items, departments, and regions. </p>
+          </div>
+        </div>
+      </div>
+      <div class="page contact-page" id="contact">
+        <div class="contact-wrapper">
+          <div class="contact-header">
+            <img class="image-contact" src="./photo.jpg">
+            <h2 class="header-name">Matt Reid</h2>
+            <h2 class="text"> Contact Me</h2>
+            <p> mattreid00@gmail.com </p>
+          </div>
+          <div class="accounts">
+            <div class="linkedin"><a href="https://www.linkedin.com/in/mattreid00/"><img class="account linkedin" src="https://coolcommunicator.com/wp-content/uploads/2018/10/Linkedin-logo.png"></a></div>
+          </div>
+          
+        </div>
+        <div class="map" style="width: 960px;">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83327.54691358961!2d-123.19394367268436!3d49.25771428143396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94fb3%3A0xbb9196ea9b81f38b!2sVancouver%2C%20BC!5e0!3m2!1sen!2sca!4v1615957126066!5m2!1sen!2sca" width="80%" height="400px" frameborder="0" style="border:0"></iframe>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
